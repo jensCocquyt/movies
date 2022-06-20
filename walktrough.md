@@ -23,7 +23,7 @@
     - Create database folder onder app en add in-memory-movie.service.ts (doorsturen)
     - add to HttpClientInMemoryWebApiModule.forRoot(InMemoryMovieService) to app.module imports
 - create movie.service onder services folder manueel
-    - inject in-memory-movie.service
+    - inject HttpClient (module should be added)
     - endpoint = 'api/movies'
     - add function to get favorites
 

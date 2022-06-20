@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { MovieService } from './movie.service';
-import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
