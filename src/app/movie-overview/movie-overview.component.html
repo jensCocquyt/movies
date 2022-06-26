@@ -1,0 +1,2 @@
+<app-movie appHighlight class="movie" *ngFor="let movie of movies$|async" [movie]="movie" [routerLink]="['/movies',movie.id]"></app-movie>
+
