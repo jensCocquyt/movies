@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { filter, map, Observable, switchMap, tap } from 'rxjs';
+import { filter, map, Observable, switchMap } from 'rxjs';
 import { Movie } from '../database/movie.model';
 import { MovieService } from '../movie.service';
 
@@ -10,7 +10,7 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movie-detail.component.scss'],
 })
 export class MovieDetailComponent implements OnInit {
-  movie$: Observable<Movie> | undefined;
+  movie$?: Observable<Movie>;
   constructor(
     private activatedRoute: ActivatedRoute,
     private movieService: MovieService
@@ -20,8 +20,7 @@ export class MovieDetailComponent implements OnInit {
     this.movie$ = this.activatedRoute.paramMap.pipe(
       map((paramMap) => paramMap.get('id') || ''),
       filter((id) => !!id),
-      switchMap((id) => this.movieService.getMovieById(id)),
-      tap(console.log)
+      switchMap((id) => this.movieService.getMovieById(id))
     );
   }
 }

@@ -1,1 +1,4 @@
-<p>movie-detail-info works!</p>
+<img [src]="movie?.poster" />
+<div> Title: {{movie?.title}}</div>
+<div> Date: {{movie?.date | date : 'dd/MM/yyyy'}}</div>
+<div> Director: {{movie?.director }}</div>

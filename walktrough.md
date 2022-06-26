@@ -52,3 +52,5 @@
 - use ActivatedRoute to get the current id
 - get the movie object as observable
 
+### add movie detail info component and pass movie object to it
+
