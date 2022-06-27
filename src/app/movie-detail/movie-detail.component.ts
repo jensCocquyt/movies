@@ -5,9 +5,8 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { filter, map, switchMap } from 'rxjs';
+import { filter, map, tap } from 'rxjs';
 import { Movie } from '../database/movie.model';
-import { MovieService } from '../movie.service';
 import { MovieDetailService } from './movie-detail.service';
 
 @Component({
@@ -17,11 +16,10 @@ import { MovieDetailService } from './movie-detail.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieDetailComponent implements OnInit, OnDestroy {
-  movie: Movie | null = null;
+  movie$? = this.movieDetailService.movie$;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private movieDetailService: MovieDetailService,
-    private movieService: MovieService
+    private movieDetailService: MovieDetailService
   ) {}
   ngOnDestroy(): void {
     this.movieDetailService.clearMovie();
@@ -32,12 +30,11 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
       .pipe(
         map((paramMap) => paramMap.get('id') || ''),
         filter((id) => !!id),
-        switchMap((id) => this.movieService.getMovieById(id))
+        tap((id) => this.movieDetailService.loadMovieById(id))
       )
-      .subscribe((movie) => (this.movie = movie));
+      .subscribe();
   }
   onUpdateMovie(movie: Movie) {
-    this.movie = movie;
     this.movieDetailService.updateMovie(movie);
   }
 }

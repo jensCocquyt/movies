@@ -54,6 +54,7 @@
 
 ### add movie detail info component and pass movie object to it
 - reuse app-movie component
+- subscribe to getById from movieservice and set local movie property
 
 ### add movie form component
 - create a movie-form component and pass movie object
@@ -62,8 +63,10 @@
 - add custom year validator
 - add output for submit action
 - handle output in movie-detail component
+- update local movie property (this.movie = movie, important for onpush example later on)
 - add updateMovie function to service
-- show alert on success
+- explain change detection with angular devtools
+- activate onpush (best practice to set by default in angular.json)
 - PROBLEMS: 
     - get movie is called twice
         - use ngIf on parent tag (use ng-container)
