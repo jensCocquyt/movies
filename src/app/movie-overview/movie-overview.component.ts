@@ -1,4 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { Observable, Subject, take, takeUntil } from 'rxjs';
 import { Movie } from '../database/movie.model';
 import { MovieService } from '../movie.service';
@@ -7,6 +12,7 @@ import { MovieService } from '../movie.service';
   selector: 'app-movie-overview',
   templateUrl: './movie-overview.component.html',
   styleUrls: ['./movie-overview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieOverviewComponent implements OnInit, OnDestroy {
   movies$: Observable<Movie[]> = this.movieService.getMovies();
