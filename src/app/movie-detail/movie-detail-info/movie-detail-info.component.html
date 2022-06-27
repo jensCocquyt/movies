@@ -1,0 +1,4 @@
+<app-movie [movie]="movie"></app-movie>
+<div>Year: {{ movie?.year }}</div>
+<div>Date: {{ movie?.date | date: "dd/MM/yyyy" }}</div>
+<div>Director: {{ movie?.director }}</div>

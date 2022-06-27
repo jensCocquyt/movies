@@ -23,7 +23,7 @@ export class MovieService {
     return this.http.get<Movie>(`${this.moviesUrl}/${id}`);
   }
 
-  // updateMovie(movie: Movie) {
-  //   return this.http.put(this.moviesUrl, { ...movie }, this.httpOptions);
-  // }
+  updateMovie(movie: Movie) {
+    return this.http.put(this.moviesUrl, { ...movie });
+  }
 }
