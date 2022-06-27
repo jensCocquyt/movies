@@ -26,7 +26,9 @@ export class MovieOverviewComponent implements OnInit, OnDestroy {
   goToDetail() {
     alert();
   }
-
+  byId(index: number, movie: Movie) {
+    return movie.id;
+  }
   ngOnDestroy(): void {
     this.destroyed.next(true);
     this.destroyed.complete();

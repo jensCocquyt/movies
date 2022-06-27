@@ -69,7 +69,7 @@
         - use ngIf on parent tag (use ng-container)
         - use shareReplay
     - movie in detail is not updated
-        - add movie-detail  service
+        - add movie-detail service with behavior subject (ngrx ready)
 
 
 
