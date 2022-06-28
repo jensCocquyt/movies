@@ -71,8 +71,6 @@
     - movie in detail is not updated
         - add movie-detail service with behavior subject (ngrx ready)
 
-
-
 ### DIY
  -- control value accessor
  -- implement ngrx

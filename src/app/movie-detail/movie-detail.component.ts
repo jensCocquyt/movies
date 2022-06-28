@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -18,7 +19,8 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   movie$? = this.movieDetailService.movie$;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private movieDetailService: MovieDetailService
+    private movieDetailService: MovieDetailService,
+    private location: Location
   ) {}
   ngOnDestroy(): void {
     this.movieDetailService.clearMovie();
@@ -31,6 +33,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   }
   onUpdateMovie(movie: Movie) {
     this.movieDetailService.updateMovie(movie);
+    this.location.back();
   }
 
   loadMovie() {

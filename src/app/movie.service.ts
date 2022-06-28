@@ -1,14 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Movie } from './database/movie.model';
 
 @Injectable({ providedIn: 'root' })
 export class MovieService {
-  private moviesUrl = 'api/movies';
-  // private httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  // };
+  moviesUrl = environment.moviesUrl;
   constructor(private http: HttpClient) {}
 
   getFavoriteMovies(): Observable<Movie[]> {
