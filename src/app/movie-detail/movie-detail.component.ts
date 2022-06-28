@@ -5,7 +5,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { filter, map, tap } from 'rxjs';
 import { Movie } from '../database/movie.model';
 import { MovieDetailService } from './movie-detail.service';
 
@@ -26,15 +25,17 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap
-      .pipe(
-        map((paramMap) => paramMap.get('id') || ''),
-        filter((id) => !!id),
-        tap((id) => this.movieDetailService.loadMovieById(id))
-      )
-      .subscribe();
+    this.movieDetailService.loadMovieById(
+      this.activatedRoute.snapshot.paramMap?.get('id') as string
+    );
   }
   onUpdateMovie(movie: Movie) {
     this.movieDetailService.updateMovie(movie);
+  }
+
+  loadMovie() {
+    this.movieDetailService.loadMovieById(
+      this.activatedRoute.snapshot.paramMap?.get('id') as string
+    );
   }
 }
