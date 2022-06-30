@@ -82,6 +82,7 @@
 
 
 ### DIY
+ -- add overview template (contentchildren with count)
  -- add custom year validator
  -- control value accessor
  -- implement ngrx
