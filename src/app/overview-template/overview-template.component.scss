@@ -1,0 +1,13 @@
+.top-bar{
+    padding: 10px;
+    display: flex;
+    border-bottom: 1px solid grey;
+    margin-bottom: 25px;
+    justify-content: end;
+    .counter{
+        background-color: grey;
+        padding: 5px;
+        border-radius: 20px;
+        color: white;
+    }
+}

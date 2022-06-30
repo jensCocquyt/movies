@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, tap } from 'rxjs';
 import { MovieService } from 'src/app/services/movie.service';
-import { Movie } from '../../database/movie.model';
+import { Movie } from '../database/movie.model';
 import { yearValidator } from './year.validator';
 
 @Component({

@@ -81,38 +81,12 @@
 - update or add ;
 
 
-
-### get movie in detail component
-- add getById function to movie.service
-- use ActivatedRoute to get the current id
-- get the movie object as observable
-
-### add movie detail info component and pass movie object to it
-- reuse app-movie component
-
-### add movie form component
-- create a movie-form component and pass movie object
-- create a form with formgroup for fields: title, year and isFavorite
-- add required validators on title and and year
-- add custom year validator
-- add output for submit action
-- handle output in movie-detail component
-- add updateMovie function to service
-- show alert on success
-- PROBLEMS: 
-    - get movie is called twice
-        - use ngIf on parent tag (use ng-container)
-        - use shareReplay
-    - movie in detail is not updated
-        - add movie-detail service with behavior subject (ngrx ready)
-
 ### DIY
- --- add custom year validator
+ -- add custom year validator
  -- control value accessor
  -- implement ngrx
  -- async validator
- -- detail view lazy loaded
- -- detail view in sidepanel
- --
+ -- edit view lazy loaded
+ -- edit view in sidepanel
 
 

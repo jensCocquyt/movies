@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MovieFormComponent } from './movie-detail/movie-form/movie-form.component';
+import { MovieFormComponent } from './movie-form/movie-form.component';
 import { MovieOverviewComponent } from './movie-overview/movie-overview.component';
 
 const routes: Routes = [
