@@ -1,21 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Movie } from './database/movie.model';
+import { Movie } from '../database/movie.model';
 
 @Injectable({ providedIn: 'root' })
 export class MovieService {
   moviesUrl = environment.moviesUrl;
   constructor(private http: HttpClient) {}
 
-  getFavoriteMovies(): Observable<Movie[]> {
-    return this.http
-      .get<Movie[]>(this.moviesUrl)
-      .pipe(map((movies) => movies.filter((m) => m.isFavorite)));
-  }
   getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(this.moviesUrl);
+    return this.http.get<Movie[]>(this.moviesUrl).pipe(
+      catchError((error) => {
+        console.log('getMovies error', error);
+        return [];
+      })
+    );
   }
   getMovieById(id: string): Observable<Movie> {
     return this.http.get<Movie>(`${this.moviesUrl}/${id}`);

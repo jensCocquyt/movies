@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, Observable, of, tap } from 'rxjs';
 import { Movie } from '../database/movie.model';
-import { MovieService } from '../movie.service';
+import { MovieService } from '../services/movie.service';
 
 @Injectable({
   providedIn: 'root',

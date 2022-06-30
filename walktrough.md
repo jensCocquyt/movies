@@ -50,33 +50,37 @@
 - enable onpush everywhere and show differences in angular devtools
 
 
-
-
 ### move form to other route
--- show router part of ppt
--- add 'add' link in header
-
-
-
+- show router part of ppt
+- add empty path to to router with redirect to 'movies path
+- add movies path to to router with component app movie overview
+- add movies/edit path to to router with form component as component
+- replace 'app-movie-overview' tag with 'router-outlet' tag in app component
+- move movies property to movie-overview component
+- add 'add' link in header with routerlink
 
 ### Add movie service
-
+- show httpclient in ppt
 - create movie.service onder services folder manueel
     - inject HttpClient (module should be added)
-    - endpoint = 'api/movies'
+    - add endpoint 'api/movies' to environment
     - add function to get all
-
+    - add catchError and demonstrate with wrong api url
+    - use getMovies in movie overview component with async pipe
+    - add addMovie in form component with subscribe and router navigate to ho
 
 ### Highlight todo item on hover
 - use custom directive with mouseEnter/mouseLeave
 - 2 options => change style on hover or add class on hover
 
-### Navigate to detail component
-- add empty path to to router with redirect to 'movies path
-- add movies path to to router with component app movie overview
-- replace 'app-movie-overview' tag with 'router-outlet' tag in app component
-- add movie detail component and add route for this component
-- add routerlink to app-movie tag
+### Navigate to form edit component
+- add edit/:id path to to router with component form
+- get todoById oninit with snapshot id
+- keep movie object as local prop
+- patch form
+- update or add ;
+
+
 
 ### get movie in detail component
 - add getById function to movie.service
