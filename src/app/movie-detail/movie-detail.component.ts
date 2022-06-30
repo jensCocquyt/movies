@@ -17,6 +17,7 @@ import { MovieDetailService } from './movie-detail.service';
 })
 export class MovieDetailComponent implements OnInit, OnDestroy {
   movie$? = this.movieDetailService.movie$;
+  id: string = '';
   constructor(
     private activatedRoute: ActivatedRoute,
     private movieDetailService: MovieDetailService,
@@ -27,9 +28,8 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.movieDetailService.loadMovieById(
-      this.activatedRoute.snapshot.paramMap?.get('id') as string
-    );
+    this.id = this.activatedRoute.snapshot.paramMap?.get('id') as string;
+    this.movieDetailService.loadMovieById(this.id);
   }
   onUpdateMovie(movie: Movie) {
     this.movieDetailService.updateMovie(movie);
@@ -37,8 +37,6 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   }
 
   loadMovie() {
-    this.movieDetailService.loadMovieById(
-      this.activatedRoute.snapshot.paramMap?.get('id') as string
-    );
+    this.movieDetailService.loadMovieById(this.id);
   }
 }

@@ -24,4 +24,10 @@ export class MovieService {
   updateMovie(movie: Movie) {
     return this.http.put(this.moviesUrl, { ...movie });
   }
+
+  addMovie(movie: Movie) {
+    return this.http.post(this.moviesUrl, {
+      ...movie,
+    });
+  }
 }

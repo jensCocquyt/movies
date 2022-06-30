@@ -1,7 +1,10 @@
-<ng-container *ngIf="movie$ | async as movie">
-  <app-movie-detail-info [movie]="movie"></app-movie-detail-info>
-  <app-movie-form
-    [movie]="movie$ | async"
-    (updateMovie)="onUpdateMovie($event)"
-  ></app-movie-form>
-</ng-container>
+<app-movie-detail-info
+  class="grid-1"
+  *ngIf="id"
+  [movie]="movie$ | async"
+></app-movie-detail-info>
+<app-movie-form
+  [ngClass]="{ 'grid-2': id }"
+  [movie]="movie$ | async"
+  (updateMovie)="onUpdateMovie($event)"
+></app-movie-form>

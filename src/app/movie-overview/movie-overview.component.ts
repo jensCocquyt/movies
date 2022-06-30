@@ -1,10 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  Input,
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Observable, Subject, take, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Movie } from '../database/movie.model';
 import { MovieService } from '../movie.service';
 
@@ -15,18 +16,18 @@ import { MovieService } from '../movie.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieOverviewComponent implements OnInit, OnDestroy {
-  movies$: Observable<Movie[]> = this.movieService.getMovies();
-  movies: Movie[] = [];
+  @Input() movies: Movie[] = [];
+  // movies$: Observable<Movie[]> = this.movieService.getMovies();
   constructor(private movieService: MovieService) {}
   private destroyed = new Subject<boolean>();
 
   ngOnInit(): void {
-    this.movieService
-      .getMovies()
-      .pipe(takeUntil(this.destroyed), take(1))
-      .subscribe((movies) => {
-        this.movies = movies;
-      });
+    // this.movieService
+    //   .getMovies()
+    //   .pipe(takeUntil(this.destroyed), take(1))
+    //   .subscribe((movies) => {
+    //     this.movies = movies;
+    //   });
   }
 
   goToDetail() {

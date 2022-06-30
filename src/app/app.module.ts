@@ -33,7 +33,9 @@ import { MovieComponent } from './shared/movie/movie.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryMovieService, {}),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryMovieService, {
+      delay: 100,
+    }),
     HttpClientModule,
     ReactiveFormsModule,
   ],

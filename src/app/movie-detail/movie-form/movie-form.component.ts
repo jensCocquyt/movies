@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MovieService } from 'src/app/movie.service';
 import { Movie } from '../../database/movie.model';
 import { yearValidator } from './year.validator';
 
@@ -33,7 +34,7 @@ export class MovieFormComponent implements OnInit {
   get year() {
     return this.movieForm.get('year') as FormControl;
   }
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private movieService: MovieService) {}
 
   ngOnInit(): void {
     if (!!this.movie) {
@@ -46,6 +47,17 @@ export class MovieFormComponent implements OnInit {
     }
   }
   onSubmit() {
-    this.updateMovie.emit({ ...this.movie, ...this.movieForm.value } as Movie);
+    // this.movieService
+    //   .addMovie({
+    //     ...this.movie,
+    //     ...this.movieForm.value,
+    //   } as Movie)
+    //   .subscribe();
+    this.updateMovie.emit({
+      ...this.movie,
+      ...this.movieForm.value,
+      poster:
+        'https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_SX300.jpg',
+    } as Movie);
   }
 }

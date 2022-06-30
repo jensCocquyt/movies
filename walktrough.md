@@ -14,27 +14,58 @@
 ### Add header
 
 - Alles verwijderen uit app.component.
-- header component aanmaken. Maak er iets mooi van en zorg ervoor dat de titel van uit het app component wordt doorgegeven
+- header component aanmaken en zorg ervoor dat de titel van uit het app component wordt doorgegeven
     - kan met input of content projection
     - show encapsulation in devtools (emulated vs shadowdom)
 
-### Add movie service
+### Add in mem movie service en model
 
 - setup mock api
     - npm install angular-in-memory-web-api --save-dev
-    - Create database folder onder app en add in-memory-movie.service.ts (doorsturen)
+    - Create database folder onder app en add in-memory-movie.service.ts, movie.model.ts en movies.data.ts (doorsturen)
     - add to HttpClientInMemoryWebApiModule.forRoot(InMemoryMovieService) to app.module imports
+
+### Show all movies on home page
+- show pipes and directives part in ppt
+- add movies as a prop on app.component
+- create movie overview component
+- create movie component
+    -movie title uppercase pipe
+- use *ngFor
+
+### add movie form component
+- show forms part in ppt
+- create a movie-form component
+- create a form with formgroup for fields: title, year and isFavorite
+- add required validators on title and and year
+- add output for submit action
+- handle form output in app component by pushing movie to array
+
+### angular devtools
+- explain cd (every change inputs, events, settimeout/interva etc, whole component tree etc)
+- open angular devtools (https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh)
+    - show component tree
+    - enable profiler and change year value => all components in CD
+- explain onpush (input by reference, only impacted components in cdref tree)
+- enable onpush everywhere and show differences in angular devtools
+
+
+
+
+### move form to other route
+-- show router part of ppt
+-- add 'add' link in header
+
+
+
+
+### Add movie service
+
 - create movie.service onder services folder manueel
     - inject HttpClient (module should be added)
     - endpoint = 'api/movies'
     - add function to get all
 
-### Show all movies on home page
-- show directive and pipes part in ppt
-- create movie overview component
-- create movie component
-- use *ngFor
-- async pipe
 
 ### Highlight todo item on hover
 - use custom directive with mouseEnter/mouseLeave
@@ -72,8 +103,12 @@
         - add movie-detail service with behavior subject (ngrx ready)
 
 ### DIY
+ --- add custom year validator
  -- control value accessor
  -- implement ngrx
  -- async validator
+ -- detail view lazy loaded
+ -- detail view in sidepanel
+ --
 
 
