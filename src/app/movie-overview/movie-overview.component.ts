@@ -21,6 +21,7 @@ export class MovieOverviewComponent implements OnInit, OnDestroy {
   private destroyed = new Subject<boolean>();
 
   ngOnInit(): void {
+    // example without async
     // this.movieService
     //   .getMovies()
     //   .pipe(takeUntil(this.destroyed), take(1))

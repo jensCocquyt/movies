@@ -1,15 +1,16 @@
-This is a walktrough for the course
+This is a walktrough for the course.
 
+[You can view the presentation here](https://docs.google.com/presentation/d/1HxeH6L1urhuCs4HkZ6Gx2PSVWTeErTdR/edit?usp=sharing&ouid=114347237295473411765&rtpof=true&sd=true)
 ### Create project
 
-- npm i -g @angular/cli
+- npm i -g @angular/cli@14
 - ng new movies
 - install angular language service plugin
 - ng serve
 - App structuur bekijken
-- Package.json
-- Index.html
-- Main.js
+    -  Package.json
+    - Index.html
+    - Main.js
 - ng add @ng-bootstrap/ng-bootstrap@13.0.0-beta.1
 
 
@@ -35,6 +36,10 @@ This is a walktrough for the course
     -movie title uppercase pipe
 - use *ngFor
 
+### Highlight todo item on hover
+- use custom directive with mouseEnter/mouseLeave
+- 2 options => change style on hover or add class on hover
+
 ### add movie form component
 - show forms part in ppt
 - create a movie-form component
@@ -50,7 +55,7 @@ This is a walktrough for the course
     - enable profiler and change year value => all components in CD
 - explain onpush (input by reference, only impacted components in cdref tree)
 - enable onpush everywhere and show differences in angular devtools
-
+- [default](https://stackblitz.com/edit/angular-ivy-uodpb7) VS [onpush](https://stackblitz.com/edit/angular-ivy-ptwbmx) in stackblitz examples (record with angular devtools profiler => click the add or click me button a coouple times => compare CD with flame grapgh)
 
 ### move form to other route
 - show router part of ppt
@@ -71,9 +76,7 @@ This is a walktrough for the course
     - use getMovies in movie overview component with async pipe
     - add addMovie in form component with subscribe and router navigate to ho
 
-### Highlight todo item on hover
-- use custom directive with mouseEnter/mouseLeave
-- 2 options => change style on hover or add class on hover
+
 
 ### Navigate to form edit component
 - add edit/:id path to to router with component form
@@ -84,6 +87,7 @@ This is a walktrough for the course
 
 
 ### DIY
+ - add movie-data service which handles all data
  - add overview template (contentchildren with count)
  - add custom year validator
  - control value accessor
