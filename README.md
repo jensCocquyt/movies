@@ -87,6 +87,7 @@ This is a walktrough for the course.
 
 
 ### DIY
+ - destroy subscriptions to prevent memory leaks
  - add movie-data service which handles all data
  - add overview template (contentchildren with count)
  - add custom year validator
